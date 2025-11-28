@@ -2,6 +2,7 @@ import { NavLinks } from '@/constant/constant';
 import Link from 'next/link';
 import React from 'react'
 import { GrTechnology } from 'react-icons/gr';
+import { HiBars3BottomRight } from 'react-icons/hi2';
 
 const Nav = () => {
   return (
@@ -45,6 +46,7 @@ const Nav = () => {
           </a>
           {/* theme toggler */}
           {/* burger menu */}
+          <HiBars3BottomRight className='w-8 h-8 cursor-pointer text-white lg:hidden' />
         </div>
       </div>
     </div>
