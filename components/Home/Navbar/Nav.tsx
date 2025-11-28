@@ -1,12 +1,26 @@
+"use client"
 import { NavLinks } from '@/constant/constant';
 import Link from 'next/link';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { GrTechnology } from 'react-icons/gr';
 import { HiBars3BottomRight } from 'react-icons/hi2';
 
 const Nav = () => {
+  const [navBg, setNavBg] = useState(false);
+
+  useEffect(() => {
+    const handler = () => {
+      if(window.scrollY >= 90) setNavBg(true);
+      if(window.scrollY < 90) setNavBg(false);
+    }
+
+    window.addEventListener("scroll", handler)
+
+    return () => window.removeEventListener("scroll", handler);
+  }, []);
+
   return (
-    <div className='transition-all duration-200 h-[12vh] z-[100] fixed w-full bg-blue-900'>
+    <div className={`transition-all ${navBg ? "bg-blue-900 shadow-md" : "fixed"} duration-200 h-[12vh] z-[100] fixed w-full bg-blue-500`}>
       <div className='flex items-center h-full justify-between w-[90%] xl:w-[80%] mx-auto'>
         {/* LOGO: ICON + NAME */}
         <div className='flex items-center space-x-2'>
