@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
+import { ThemeProvider } from 'next-themes'
 
-const Provider = ({ children }: {children: ReactNode}) => {
+const Provider = ({ children }: { children: ReactNode }) => {
   return (
-    <div>Provider</div>
+    <div>
+      <ThemeProvider attribute='class' enableSystem defaultTheme='system'>
+        {children}
+      </ThemeProvider>
+    </div>
   )
 }
 

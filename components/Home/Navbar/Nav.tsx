@@ -1,4 +1,5 @@
 "use client"
+import ThemeToggler from '@/components/Helper/ThemeToggler';
 import { NavLinks } from '@/constant/constant';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
@@ -63,6 +64,7 @@ const Nav = ({ openNav }: Props) => {
             <span className='relative'>Create Account</span>
           </a>
           {/* theme toggler */}
+          <ThemeToggler />
           {/* burger menu */}
           <HiBars3BottomRight 
             onClick={openNav} 
