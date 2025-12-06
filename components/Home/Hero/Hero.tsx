@@ -6,7 +6,7 @@ const Hero = () => {
     <div className='relative bg-blue-950 w-full h-screen flex justify-center flex-col'>
       <div className='w-[90%] md:w-[80%] mx-auto items-center grid grid-cols-1 xl:grid-cols-2 gap-10'>
         {/* text content */}
-        <div>
+        <div data-aos='fade-up'>
           {/* subheading */}
           <p className='text-sm sm:text-base md:text-xl font-bold text-white'>
             The Top Software Development Company
@@ -28,7 +28,7 @@ const Hero = () => {
           </a>
         </div>
         {/* image content */}
-        <div>
+        <div data-aos='fade-down' data-aos-delay='150'>
           <Image src='/images/hero.png' alt="hero" width={900} height={900} />
         </div>
       </div>

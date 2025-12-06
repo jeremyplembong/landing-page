@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useEffect } from 'react'
 import Hero from "./Hero/Hero"
 import Services from './Services/Services'
 import About from './About/About'
@@ -14,7 +14,19 @@ import 'aos/dist/aos.css'; // You can also use <link> for styles
 
 const Home = () => {
 
-  
+  useEffect(() => {
+    const initAOS = async() => {
+      await import('aos')
+      AOS.init({
+        duration: 1000,
+        easing: 'ease-in-out',
+        once: true,
+        anchorPlacement: 'top-bottom'
+      })
+    }
+
+    initAOS()
+  }, [])
 
   return (
     <div className='overflow-hidden'>
